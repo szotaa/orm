@@ -3,11 +3,13 @@
     "description": "Demo project for ORM class",
     "require": {
         "doctrine/orm": "^2.7",
-        "doctrine/migrations": "^2.0"
+        "doctrine/migrations": "^2.2",
+        "vlucas/valitron": "^1.4"
     },
     "autoload": {
         "psr-0": {
-            "Entity\\": "./"
+            "Entity\\": "./",
+            "Repository\\": "./"
         }
     },
     "require-dev": {
