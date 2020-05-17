@@ -6,6 +6,7 @@
             <generator strategy="AUTO" />
         </id>
         <field name="typ_oferty" type="string" length="5" />
+        <field name="numer" type="string" length="100" />
         <field name="powierzchnia" type="float" />
         <field name="cena" type="float" />
         <field name="cena_m2" type="float" />

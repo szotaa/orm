@@ -7,6 +7,7 @@
         </id>
         <field name="pietro" type="integer" />
         <field name="liczba_pieter" type="integer" />
+        <field name="liczba_pokoi" type="integer" />
         <field name="rok_budowy" type="integer" />
 
         <one-to-one field="nieruchomosc" target-entity="Nieruchomosc" inversed-by="mieszkanie" />
