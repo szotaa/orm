@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Entity\Nieruchomosc" table="nieruchomosci" repository-class="Repository\NieruchomoscRepository">
+        <id name="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+        <field name="typ_oferty" type="string" length="5" />
+        <field name="powierzchnia" type="float" />
+        <field name="cena" type="float" />
+        <field name="cena_m2" type="float" />
+
+        <one-to-one field="mieszkanie" target-entity="Mieszkanie" mapped-by="nieruchomosc">
+            <cascade>
+                <cascade-persist />
+            </cascade>
+        </one-to-one>
+        <many-to-one field="miasto" target-entity="Miasto" />
+        <many-to-many field="opcjekomunikacji" target-entity="Komunikacja">
+            <join-columns>
+                <join-column name="nieruchomosc_id" referenced-column-name="id" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column name="komunikacja_id" referenced-column-name="id" />
+            </inverse-join-columns>
+        </many-to-many>
+    </entity>
+</doctrine-mapping>
